@@ -1,4 +1,4 @@
-define(['id3', 'clases'], function(arbol) {
+define(['id3', 'vis', 'clases'], function(arbol, vis) {
     let dibujo = {};
     // let contador = 1;
     let obtenerArbolRecursivo = (nodo, arcosNodos) => {
