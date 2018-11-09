@@ -1,5 +1,6 @@
 class Nodo {
-    constructor(hijos = null) {
+    constructor(id = 1, hijos = null) {
+        this.id = id;
         this.hijos = hijos;
     }
     agregarHijo(nodo) {
@@ -15,15 +16,15 @@ class Arco {
 }
 
 class Hoja extends Nodo {
-    constructor(clase) {
-        super();
+    constructor(clase, autoIncremental = 1) {
+        super(autoIncremental);
         this.clase = clase;
     }
 }
 
 class Atributo extends Nodo {
-    constructor(pregunta, valores = []) {
-        super(valores);
+    constructor(pregunta, valores = [], autoIncremental = 1) {
+        super(autoIncremental, valores);
         this.pregunta = pregunta;
     }
 }

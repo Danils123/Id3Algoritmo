@@ -13,8 +13,9 @@ define([''], () => {
     }
 
     let inicializarArbol = () => {
-        require(['id3'], function(arbol) {
+        require(['id3', 'dibujarArbol'], function(arbol, dibujo) {
             arbol.inicializarArbol();
+            dibujo.pintarArbol();
         })
     };
 

@@ -16,7 +16,7 @@ define(["datos", "clases"], (ejemplos) => {
     const claseNombre = 'play';
     // Esta variable sirve para determinar los valores binarios de la clase, en la posicion 0 se indicara cual es el negativo y en la posicion 1 se indicara el positivo
     const valoresClases = ["No", "Si"];
-
+    let autoIncremental = 0;
 
 
     // Permite obtener los atributos de un conjunto de datos
@@ -66,7 +66,8 @@ define(["datos", "clases"], (ejemplos) => {
         debugger;
         let valoresClase = obtenerValoresAtributo(ejemplosLista, clase);
         if (valoresClase.length == 1) {
-            return new Hoja(valoresClase[0]);
+            autoIncremental++;
+            return new Hoja(valoresClase[0], autoIncremental);
         }
 
         if (atributos.length == 0) {
@@ -77,8 +78,8 @@ define(["datos", "clases"], (ejemplos) => {
         let gananciaAtributos = obtenerGananciaAtributos(ejemplosLista, valores, atributos);
         let atributoMaximo = atributos[maximaGanancia(gananciaAtributos)];
 
-        let nodo = new Atributo(atributoMaximo, []);
-
+        autoIncremental++;
+        let nodo = new Atributo(atributoMaximo, [], autoIncremental);
         let valoresLista = obtenerValoresAtributo(ejemplosLista, atributoMaximo);
 
         valoresLista.forEach((valor) => {
@@ -207,12 +208,16 @@ define(["datos", "clases"], (ejemplos) => {
     arbol.inicializarArbol = () => {
         iniciarAtributos(ejemplos);
         raiz = crearArbol(ejemplos, claseNombre, listaAtributos, valoresAtributos);
-        // console.log("Arbol", JSON.stringify(raiz, null, 2));
+        // console.log("Arbol", JSON.stringify(raiz, null, 1));
         console.log(raiz);
     }
 
     arbol.obtenerClase = () => {
         return [claseNombre, valoresClases];
+    }
+
+    arbol.obtenerRaiz = () => {
+        return raiz;
     }
 
     arbol.pronosticar = (ejemplo) => {

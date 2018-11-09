@@ -7,6 +7,8 @@ requirejs.config({
         "clases": "scripts/app/clases",
         "datos": "scripts/app/datos",
         "id3": "scripts/app/id3",
+        "vis": "scripts/lib/vis",
+        "dibujarArbol": "scripts/app/dibujarArbol",
         "mensajes": "scripts/app/mensajes",
         "jquery": "https://code.jquery.com/jquery-3.3.1.slim.min.js",
         "popper": "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js",
@@ -24,6 +26,14 @@ requirejs.config({
     }
 });
 require(["main"], function(iniciar) {
-    // $('[data-to"bootstrap"ggle="tooltip"]').tooltip();
+    // var options = {
+    //     configure: {
+    //         enabled: true,
+    //         filter: 'nodes,edges',
+    //         container: undefined,
+    //         showButton: true
+    //     }
+    // }
+    // network.setOptions(options);
     iniciar.onReady();
 });
