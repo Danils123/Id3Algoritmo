@@ -13,17 +13,26 @@ define(["datos", "clases"], (ejemplos) => {
 
     let raiz = null;
 
-    const claseNombre = 'play';
+    const claseNombre = 'quality';
     // Esta variable sirve para determinar los valores binarios de la clase, en la posicion 0 se indicara cual es el negativo y en la posicion 1 se indicara el positivo
-    const valoresClases = ["No", "Si"];
+    const valoresClases = ["unacc", "acc"];
     let autoIncremental = 0;
 
 
     // Permite obtener los atributos de un conjunto de datos
     let iniciarAtributos = (ejemplos) => {
+        ejemplos = construirAtributosDato(ejemplos);
         listaAtributos = Object.keys(new Dato());
         iniciarValoresAtributos(ejemplos, listaAtributos);
     };
+
+    let construirAtributosDato = (ejemplos) => {
+        let datos = [];
+        ejemplos.forEach((x) => {
+            datos.push(new Dato(...Object.values(x)));
+        })
+        return datos;
+    }
 
     // Permite inicializar la variable valoresAtributos con datos del set de datos ejemplos
     let iniciarValoresAtributos = (ejemplos, listaAtributosList) => {
@@ -63,7 +72,6 @@ define(["datos", "clases"], (ejemplos) => {
     //           los atributos son los futuros nodo de decision
     // Salida:   Nodo este puede ser un nodo de tipo hoja o un nodo de tipo atributo
     let crearArbol = (ejemplosLista, clase, atributos, valores) => {
-        debugger;
         let valoresClase = obtenerValoresAtributo(ejemplosLista, clase);
         if (valoresClase.length == 1) {
             autoIncremental++;
@@ -201,7 +209,6 @@ define(["datos", "clases"], (ejemplos) => {
             });
             nodo = predecirRecursivo(ramaSeleccionada.sigNodo, ejemplo);
         }
-
         return nodo;
     };
 
@@ -209,7 +216,7 @@ define(["datos", "clases"], (ejemplos) => {
         iniciarAtributos(ejemplos);
         raiz = crearArbol(ejemplos, claseNombre, listaAtributos, valoresAtributos);
         // console.log("Arbol", JSON.stringify(raiz, null, 1));
-        console.log(raiz);
+        // console.log("arbol", raiz);
     }
 
     arbol.obtenerClase = () => {

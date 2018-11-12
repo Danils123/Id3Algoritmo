@@ -7,9 +7,10 @@ requirejs.config({
         "clases": "scripts/app/clases",
         "datos": "scripts/app/datos",
         "id3": "scripts/app/id3",
-        "vis": "scripts/lib/vis",
+        "vis": "scripts/lib/vis.min",
         "dibujarArbol": "scripts/app/dibujarArbol",
         "mensajes": "scripts/app/mensajes",
+        "data": "scripts/app/data/datos3",
         "jquery": "https://code.jquery.com/jquery-3.3.1.slim.min.js",
         "popper": "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js",
         "bootstrap": "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
@@ -26,14 +27,6 @@ requirejs.config({
     }
 });
 require(["main"], function(iniciar) {
-    // var options = {
-    //     configure: {
-    //         enabled: true,
-    //         filter: 'nodes,edges',
-    //         container: undefined,
-    //         showButton: true
-    //     }
-    // }
-    // network.setOptions(options);
+
     iniciar.onReady();
 });

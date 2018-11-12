@@ -29,14 +29,25 @@ class Atributo extends Nodo {
     }
 }
 
+// Si necesita cambiar los datos y estoy tienen otros atributos es necesario que cambie aca los atributos
+
+// constructor(Cielo, Temperatura, Humedad, Viento, play = '') {
+//     this.Cielo = Cielo;
+//     this.Temperatura = Temperatura;
+//     this.Humedad = Humedad;
+//     this.Viento = Viento;
+//     this.play = play;
+// }
 
 class Dato {
-    constructor(Cielo, Temperatura, Humedad, Viento, play = '') {
-        this.Cielo = Cielo;
-        this.Temperatura = Temperatura;
-        this.Humedad = Humedad;
-        this.Viento = Viento;
-        this.play = play;
+    constructor(buying, maint, doors, persons, lug_boot, safety, quality) {
+        this.buying = buying;
+        this.maint = maint;
+        this.doors = doors;
+        this.persons = persons;
+        this.lug_boot = lug_boot;
+        this.safety = safety;
+        this.quality = quality;
     }
 }
 
