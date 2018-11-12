@@ -253,6 +253,7 @@ define(["datos", "clases"], (ejemplos) => {
     }
 
     arbol.pronosticar = (ejemplo) => {
+        console.log(ejemplo);
         return predecirRecursivo(raiz, ejemplo)['clase'];
     }
 
