@@ -4,26 +4,32 @@ define([''], () => {
 
     let obtenerDatos = () => {
         let datos = [];
-
-        datos.push(document.getElementById('slCielo').value);
-        datos.push(document.getElementById('slTemp').value);
-        datos.push(document.getElementById('slHumedad').value);
-        datos.push(document.getElementById('slViento').value);
+        require(['id3'], (arbol) => {
+            (arbol.obtenerAtributos()).forEach(atributo => {
+                if (atributo != arbol.obtenerClase()[0]) {
+                    let id = `sl-${atributo}`;
+                    console.log(id);
+                    let dato = document.getElementById(id).value;
+                    datos.push(dato);
+                }
+            });
+        });
         return datos;
     }
 
     let inicializarArbol = () => {
-        require(['id3', 'dibujarArbol'], function(arbol, dibujo) {
+        require(['id3', 'dibujarArbol', 'form'], function(arbol, dibujo, form) {
             arbol.inicializarArbol();
+            form.pintarForm();
             dibujo.pintarArbol();
         })
     };
 
     let predecir = () => {
         let datos = obtenerDatos();
-        require(['mensajes', 'id3'], function(mensaje, arbol) {
-            arbol.pronosticar(new Dato(datos[0], datos[1], datos[2], datos[3])) == arbol.obtenerClase()[1][1] ?
-                mensaje.imprimirMensaje(0, 2) : mensaje.imprimirMensaje(1, 3);
+        require(['mensajes', 'id3', 'config'], function(mensaje, arbol, config) {
+            arbol.pronosticar(new Dato(...datos)) == arbol.obtenerClase()[1][1] ?
+                mensaje.imprimirMensaje(config['msjPositivo'], 2) : mensaje.imprimirMensaje(config['msjNegativo'], 3);
         });
     }
 

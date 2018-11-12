@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="./styles/vis-network.min.css" rel="stylesheet" type="text/css" />
-    <style type="text/css">
+    <!-- <style type="text/css">
         #mynetwork {
             width: 600px;
             height: 400px;
             border: 1px solid lightgray;
         }
-    </style>
+    </style> -->
 </head>
 
 <body>
@@ -25,74 +25,37 @@
                 <p>Técnica de minería de datos: Árbol de decisión ID3</p>
             </div>
             <div class="card-body">
-                <h5 class="card-title text-center">Seleccione las condiciones del clima de hoy</h5>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="basic-url">Cielo</label>
-                            <select class="custom-select" id="slCielo">
-                                <option value="Soleado">Soleado</option>
-                                <option value="Lluvioso">Lluvioso</option>
-                                <option value="Nublado">Nublado</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="basic-url">Temperatura</label>
-                            <select class="custom-select" id="slTemp">
-                                <option value="Caliente">Caliente</option>
-                                <option value="Templado">Templado</option>
-                                <option value="Frío">Frío</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="basic-url">Humedad</label>
-                            <select class="custom-select" id="slHumedad">
-                                <option value="Alta">Alta</option>
-                                <option value="Normal">Normal</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Viento</label>
-                            <select class="custom-select" id="slViento">
-                                <option value="Fuerte">Fuerte</option>
-                                <option value="Débil">Débil</option>
-                            </select>
-                        </div>
-                    </div>
+                <h5 class="card-title text-center" id="titleId3">Seleccione las condiciones del clima de hoy</h5>
+                <div id="formId3">
+
                 </div>
 
-
-                <br>
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <a href="#" class="btn btn-primary btn-block" id="btnPredecir">Predecir</a>
-                    </div>
-                </div>
             </div>
-            <div class="card-footer text-muted">
-                <label for="">Resultado: </label>
-                <div style="display: none" id="alertMsj" class="text-center alert" role="alert">
-                    <br><br>
+
+
+            <br>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <a href="#" class="btn btn-primary btn-block" id="btnPredecir">Predecir</a>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-3"></div>
-            <div class="col-md-6 mx-auto">
-                <div id="mynetwork"></div>
-
-                <p id="selection"></p>
+        <div class="card-footer text-muted">
+            <label for="">Resultado: </label>
+            <div style="display: none" id="alertMsj" class="text-center alert" role="alert">
+                <br><br>
             </div>
-            <div class="col-3"></div>
         </div>
+    </div>
+    <div class="row">
+        <!-- <div class="col-3"></div> -->
+        <div class="col-md-12 mx-auto">
+            <div id="mynetwork"></div>
+
+            <p id="selection"></p>
+        </div>
+        <!-- <div class="col-3"></div> -->
+    </div>
     </div>
     <script src="./scripts/lib/required.js" data-main="./scripts/common.js"></script>
 </body>

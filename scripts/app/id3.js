@@ -21,9 +21,12 @@ define(["datos", "clases"], (ejemplos) => {
 
     // Permite obtener los atributos de un conjunto de datos
     let iniciarAtributos = (ejemplos) => {
+        listaAtributos = [];
+        valoresAtributos = [];
         ejemplos = construirAtributosDato(ejemplos);
         listaAtributos = Object.keys(new Dato());
         iniciarValoresAtributos(ejemplos, listaAtributos);
+        console.log(valoresAtributos);
     };
 
     let construirAtributosDato = (ejemplos) => {
@@ -223,8 +226,30 @@ define(["datos", "clases"], (ejemplos) => {
         return [claseNombre, valoresClases];
     }
 
+    arbol.obtenerAtributosValores = () => {
+        iniciarAtributos(ejemplos);
+        // if (listaAtributos != [] && valoresAtributos != []) {
+        return [Object.keys(new Dato()), valoresAtributos];
+        // } else {
+        //     return null;
+        // }
+    }
+
+    arbol.obtenerAtributos = () => {
+
+        if (listaAtributos != []) {
+            return Object.keys(new Dato());
+        } else {
+            return null;
+        }
+    }
+
     arbol.obtenerRaiz = () => {
         return raiz;
+    }
+
+    arbol.iniciarAtributos = () => {
+        iniciarAtributos(ejemplos);
     }
 
     arbol.pronosticar = (ejemplo) => {

@@ -40,7 +40,7 @@ class Atributo extends Nodo {
 // }
 
 class Dato {
-    constructor(buying, maint, doors, persons, lug_boot, safety, quality) {
+    constructor(buying, maint, doors, persons, lug_boot, safety, quality = '') {
         this.buying = buying;
         this.maint = maint;
         this.doors = doors;

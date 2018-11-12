@@ -39,6 +39,7 @@ define(['id3', 'vis', 'clases'], function(arbol, vis) {
         };
 
         var options = {
+            autoResize: true,
             layout: {
                 hierarchical: {
                     sortMethod: layoutMethod
@@ -52,6 +53,8 @@ define(['id3', 'vis', 'clases'], function(arbol, vis) {
             }
         };
         network = new vis.Network(container, data, options);
+        network.setSize("1100", "600");
+        network.redraw();
     }
     return dibujo;
 });
