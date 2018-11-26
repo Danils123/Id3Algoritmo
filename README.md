@@ -14,7 +14,7 @@ Los conceptos que debemos tener claros son:
 - Nodo decisión o carácteristica: Es un nodo que con va a contener 1 o más arcos. Por ejemplo: cielo, viento.
 - Nodo Hoja o clase: Esto es un dato binario donde se permite saber la decisión final. Por ejemplo: Soleado, Nublado, Lluvioso
 - Arco o valor: posibles valores de un nodo decisión. Por ejemplo: No, Sí.
-- [Entropía](https://es.wikipedia.org/wiki/Entrop%C3%ADa_(informaci%C3%B3n)): Es un concepto equivalente a la incertidumble.
+- [Entropía](https://es.wikipedia.org/wiki/Entrop%C3%ADa_(informaci%C3%B3n)): Es un concepto equivalente a la incertidumble a la cantidad    de incertidumbre. Cuando la incertidumbre es máxima la entropía sera de 1 mientras que si la incertidumbre es menor la entropía sera de    0.
 - Ganancía de la información: Medida de discriminación.
 
 Esta implementación del algoritmo id3 es para la predicción de datos del clima, donde se le aconseja salir o no a un jugador de golf. La cantidad de datos.
