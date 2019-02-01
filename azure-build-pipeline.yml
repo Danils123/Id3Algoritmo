@@ -1,7 +1,0 @@
-pool:
-  vmImage: 'Ubunto 16.04'
-  
-steps: 
-- script: echo Hello, world!
-  displayname: 'Run a one-line script'
-   
